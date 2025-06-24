@@ -155,13 +155,3 @@ Created by me
 GitHub: [@Sw4nhilde](https://github.com/Sw4nhilde)
 
 ```
-
----
-
-Jika kamu ingin, saya juga bisa bantu:
-- **Membuat versi bahasa Inggris**
-- **Membuat LICENSE file**
-- **Membuat badge GitHub (build status, license, dsb)**
-
-Kirimkan juga isi `pajakkalk.sql` kalau ingin saya bantu validasi.
-```
