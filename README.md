@@ -133,9 +133,9 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 ## 🙋‍♂️ Developer
 
 Created by Kelompok 2 RPL
-1. Nazwa Yulianti M (1237050007)
-2. ⁠Muhammad Eka (1237050079)
-3. ⁠Muhammad Ridwan (1237050090)
-4. ⁠Muhammad Tibia(1237050089)
-5. ⁠Muhamad Jalallullail(1237050025) 
-6. ⁠Nurdiansyah Pratama (1237050139)
+1. Nazwa Yulianti M (1237050007) https://github.com/nazwaym
+3. ⁠Muhammad Eka (1237050079) https://github.com/Sw4nhilde
+4. ⁠Muhammad Ridwan (1237050090)
+5. ⁠Muhammad Tibia(1237050089)
+6. ⁠Muhamad Jalallullail(1237050025) 
+7. ⁠Nurdiansyah Pratama (1237050139)
