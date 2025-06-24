@@ -1,61 +1,167 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Berikut adalah contoh **`README.md` lengkap dan profesional** untuk proyek Laravel kamu: **Kalkulator Pajak dengan fitur Riwayat & Ekspor PDF**, menggunakan **database `pajakkalk.sql`**.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+````markdown
+# 🧮 Kalkulator Pajak Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi web kalkulator pajak berbasis Laravel dengan fitur:
+- Perhitungan pajak otomatis
+- Penyimpanan riwayat perhitungan
+- Ekspor hasil ke PDF
+- Tanpa perlu login atau autentikasi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Cocok untuk simulasi PPN, PKB, atau pajak lainnya.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ✨ Fitur
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 💸 Kalkulasi pajak berdasarkan input pengguna
+- 🗂 Menyimpan riwayat perhitungan secara otomatis
+- 📄 Ekspor hasil perhitungan ke PDF
+- 📱 Antarmuka sederhana dan responsif
+- 🧾 Riwayat ditampilkan dalam bentuk tabel
+- 🔐 Tidak memerlukan login
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🧰 Teknologi yang Digunakan
 
-## Laravel Sponsors
+- [Laravel](https://laravel.com/) 10+
+- [MySQL](https://www.mysql.com/) / phpMyAdmin
+- [DOMPDF](https://github.com/dompdf/dompdf) untuk PDF generation
+- Blade Templating Engine
+- Bootstrap / TailwindCSS (pilih salah satu)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🚀 Cara Instalasi
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 1. Clone Repository
 
-## Contributing
+```bash
+git clone https://github.com/username/kalkulator-pajak.git
+cd kalkulator-pajak
+````
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2. Install Dependency Laravel
 
-## Code of Conduct
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 3. Buat File `.env`
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4. Konfigurasi `.env`
 
-## License
+Edit file `.env` kamu:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=pajakkalk
+DB_USERNAME=root
+DB_PASSWORD=  // ganti sesuai password MySQL kamu
+```
+
+---
+
+## 🗃️ Import Database (via phpMyAdmin)
+
+1. Buka [phpMyAdmin](http://localhost/phpmyadmin)
+2. Buat database baru dengan nama: `pajakkalk`
+3. Masuk ke tab **Import**
+4. Pilih file `database/pajakkalk.sql` dari folder project
+5. Klik **Go**
+
+✅ Setelah sukses, database akan terpasang dan siap digunakan.
+
+📥 [Download pajakkalk.sql](database/pajakkalk.sql)
+
+---
+
+## 💡 Menjalankan Proyek
+
+```bash
+php artisan serve
+```
+
+Lalu akses di browser: [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 🖼️ Tampilan Antarmuka (opsional)
+
+Tambahkan screenshot hasil kalkulasi, tombol ekspor PDF, dan tabel riwayat, misalnya:
+
+```markdown
+### Hasil Kalkulasi
+![Hasil Pajak](screenshots/hasil-pajak.png)
+
+### Tabel Riwayat
+![Riwayat](screenshots/riwayat.png)
+```
+
+---
+
+## 📄 Struktur Folder Penting
+
+```
+kalkulator-pajak/
+├── app/
+│   └── Http/Controllers/PajakController.php
+├── resources/
+│   └── views/
+│       ├── kalkulator.blade.php
+│       ├── hasil_pdf.blade.php
+├── database/
+│   └── pajakkalk.sql
+├── routes/
+│   └── web.php
+└── README.md
+```
+
+---
+
+## 📄 Ekspor PDF
+
+Setelah menghitung pajak, tombol **"Export to PDF"** akan muncul. Hasil PDF dihasilkan dari view Blade dan diunduh langsung.
+
+---
+
+## 🤝 Kontribusi
+
+Pull request sangat terbuka!
+Silakan fork, buat branch baru, dan kirim PR.
+
+---
+
+## 📜 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Developer
+
+Created by me
+GitHub: [@Sw4nhilde](https://github.com/Sw4nhilde)
+
+```
+
+---
+
+Jika kamu ingin, saya juga bisa bantu:
+- **Membuat versi bahasa Inggris**
+- **Membuat LICENSE file**
+- **Membuat badge GitHub (build status, license, dsb)**
+
+Kirimkan juga isi `pajakkalk.sql` kalau ingin saya bantu validasi.
+```
