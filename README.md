@@ -32,7 +32,7 @@ Cocok untuk simulasi PPN, PKB, atau pajak lainnya.
 - [MySQL](https://www.mysql.com/) / phpMyAdmin
 - [DOMPDF](https://github.com/dompdf/dompdf) untuk PDF generation
 - Blade Templating Engine
-- Bootstrap / TailwindCSS (pilih salah satu)
+- HTML/CSS
 
 ---
 
