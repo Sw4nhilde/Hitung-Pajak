@@ -1,8 +1,3 @@
-Berikut adalah contoh **`README.md` lengkap dan profesional** untuk proyek Laravel kamu: **Kalkulator Pajak dengan fitur Riwayat & Ekspor PDF**, menggunakan **database `pajakkalk.sql`**.
-
----
-
-````markdown
 # 🧮 Kalkulator Pajak Laravel
 
 Aplikasi web kalkulator pajak berbasis Laravel dengan fitur:
