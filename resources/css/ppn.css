@@ -1,0 +1,196 @@
+/* public/css/kalkulator-pajak.css */
+
+/* --- Import Font dan Variabel Global --- */
+body {
+  background-color: #f0f0f0; /* Warna latar dari body */
+  font-family: 'Poppins', sans-serif; /* Font default */
+  color: #333;
+}
+
+/* --- Container Utama Halaman --- */
+.tax-calculator-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --- Gaya untuk Header --- */
+.tax-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+.header-icon {
+  width: 50px; /* Sesuaikan ukuran ikon */
+  height: 50px;
+}
+.tax-header h1 {
+  font-family: 'Gelasio', serif; /* Font dari Figma */
+  font-size: 48px;
+  color: rgba(96, 95, 109, 1);
+  font-weight: 700;
+}
+
+
+/* --- Gaya untuk Bagian Intro --- */
+.tax-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.intro-illustration {
+  flex-basis: 40%;
+}
+.intro-text {
+  flex-basis: 60%;
+}
+.intro-text h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.intro-text p {
+  font-size: 24px;
+  color: rgba(113, 109, 109, 1);
+}
+.intro-text .highlight {
+  font-weight: 700;
+  color: black;
+}
+
+
+/* --- Gaya untuk Tabulasi (PPh, PPN, PKB) --- */
+.tax-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1px;
+  margin-bottom: -1px; /* Trik agar menyatu dengan container di bawahnya */
+  position: relative;
+  z-index: 1;
+}
+.tab-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  padding: 10px 60px;
+  border: 1px solid #ccc;
+  background-color: #f8f9fa;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  cursor: pointer;
+  color: #888;
+}
+.tab-item.active {
+  background-color: white;
+  border-bottom: 1px solid white;
+  color: black;
+}
+
+
+/* --- Kontainer Utama Kalkulator --- */
+.calculator-container {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  border: 1px solid #ddd;
+  position: relative;
+}
+.calculator-title {
+  font-size: 64px;
+  font-weight: 700;
+  text-align: center;
+}
+.calculator-subtitle {
+  font-size: 24px;
+  color: rgba(113, 109, 109, 1);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.calculator-body {
+  display: flex;
+  gap: 3rem;
+}
+
+/* --- Kolom Kiri (Panduan) --- */
+.guide-column {
+  flex-basis: 50%;
+}
+.guide-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+.guide-list {
+  list-style: none;
+  padding: 0;
+}
+.guide-list li {
+  background-color: #f8f9fa;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.guide-list li strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: black;
+}
+
+/* --- Kolom Kanan (Form) --- */
+.form-column {
+  flex-basis: 50%;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  color: #333;
+}
+.form-group .required {
+  color: red;
+}
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  background-color: #f5f5f5; /* Mirip dengan warna di Figma */
+  box-shadow: inset 0px 4px 4px rgba(0,0,0,0.05); /* Shadow ke dalam */
+  font-size: 16px;
+}
+.form-control[readonly] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* --- Tombol Hitung --- */
+.btn-hitung {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(106, 149, 202, 1);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-hitung:hover {
+  background-color: #5a84b1;
+}

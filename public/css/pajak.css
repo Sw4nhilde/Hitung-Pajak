@@ -1,0 +1,478 @@
+/* --- Variabel Global & Reset --- */
+:root {
+    --font-gelasio: 'Gelasio', serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --color-header-text: rgba(96, 95, 109, 1);
+    --color-body-text: rgba(113, 109, 109, 1);
+    --color-blue-bg: rgba(209, 230, 255, 1);
+    --color-button: rgba(106, 149, 202, 1);
+    --color-button-border: rgba(219, 218, 218, 1);
+    --color-input-bg: rgba(245, 245, 245, 1);
+    --color-input-border: rgba(217, 217, 217, 1);
+}
+
+body {
+    background-color: white;
+    font-family: var(--font-poppins);
+}
+
+.tax-calculator-page {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.tax-calculator-page::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 450px;
+    background-color: var(--color-blue-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.tax-header, .tax-intro, .tax-tabs, .calculator-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.tax-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.header-icon {
+    width: 50px;
+    height: auto;
+}
+
+.tax-header h1 {
+    font-family: var(--font-gelasio);
+    font-size: 48px;
+    color: var(--color-header-text);
+    font-weight: 700;
+}
+
+.tax-intro {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.intro-illustration {
+    flex-basis: 40%;
+}
+
+.intro-illustration img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.intro-text {
+    flex-basis: 60%;
+}
+
+.intro-text h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.intro-text p {
+    font-size: 24px;
+    color: var(--color-body-text);
+}
+
+.intro-text p.highlight {
+    font-weight: 700;
+    color: black;
+}
+
+.tax-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    margin-bottom: -2px;
+    position: relative;
+    z-index: 2;
+}
+
+.tab-item {
+    font-family: var(--font-poppins);
+    font-size: 40px;
+    font-weight: 700;
+    padding: 10px 50px;
+    border: 1px solid #ccc;
+    background-color: #f0f3f7;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    cursor: pointer;
+    color: #888;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-item.active,
+.tab-item:hover {
+    background-color: white;
+    border-color: #ddd;
+    border-bottom: 2px solid white;
+    color: black;
+}
+
+.calculator-container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 3rem;
+    border: 1px solid #ddd;
+    position: relative;
+    z-index: 1;
+}
+
+.calculator-title {
+    font-size: 64px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.calculator-subtitle {
+    font-size: 24px;
+    color: var(--color-body-text);
+    text-align: center;
+    max-width: 800px;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+}
+
+.calculator-body {
+    display: flex;
+    gap: 3rem;
+}
+
+.guide-column {
+    flex-basis: 50%;
+}
+
+.guide-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.guide-list {
+    list-style: none;
+    padding: 0;
+}
+
+.guide-list li {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.guide-list li strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+    color: black;
+}
+
+.form-column {
+    flex-basis: 50%;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group .required {
+    color: red;
+    margin-left: 4px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--color-input-border);
+    background-color: var(--color-input-bg);
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.06);
+    font-size: 16px;
+}
+
+.form-control:focus {
+    background-color: white;
+    border-color: var(--color-button);
+    box-shadow: 0 0 0 0.25rem rgba(106, 149, 202, 0.25);
+    outline: none;
+}
+
+.form-group.readonly .form-control {
+    background-color: #e9ecef;
+    font-weight: bold;
+}
+
+.form-group.result-total .form-control {
+    color: var(--color-button);
+    font-size: 1.1rem;
+}
+
+.btn-hitung {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-button);
+    color: white;
+    border: 3px solid var(--color-button-border);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-hitung:hover {
+    background-color: #5a84b1;
+    border-color: #a4a3a3;
+}
+
+/* Style untuk Ikon Info (?) */
+.info-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #a0a0a0;
+    color: white;
+    font-style: normal;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: help;
+    margin-left: 8px;
+    user-select: none;
+}
+
+/* Style untuk rincian hasil */
+.result-breakdown {
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+.details-link {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--color-button);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.details-link:hover {
+    color: #3a5b82;
+}
+
+/* Tabel di dalam Modal */
+.table-ptkp {
+    width: 100%;
+    font-size: 14px;
+}
+.table-ptkp th, .table-ptkp td {
+    border: 1px solid #dee2e6;
+    padding: 8px 12px;
+    text-align: left;
+}
+.table-ptkp thead {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+.table-ptkp td:first-child {
+    font-weight: bold;
+}
+
+/* Penjelasan Rumus di bawah hasil */
+.formula-text {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    color: #6c757d;
+    margin-top: 4px;
+}
+.transaction-description {
+    font-size: 13px;
+    color: #495057;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-top: 8px;
+    border-left: 4px solid var(--color-button);
+    transition: all 0.3s ease;
+    min-height: 50px; /* Memberi tinggi minimum agar tidak "lompat" */
+}
+
+
+
+
+
+
+
+.home-page .tax-calculator-page::before {
+    display: none;
+}
+.home-hero-bg {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 450px;
+    background-color: var(--color-blue-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Hero Section */
+.home-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+}
+.home-hero .intro-text {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--color-header-text);
+}
+.home-hero .intro-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+}
+.home-hero .intro-text p {
+    color: var(--color-body-text);
+}
+.home-illustration {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+.home-illustration img {
+    width: 100%;
+}
+
+
+/* Calculator Selection Section */
+.calculator-selection {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 15px;
+}
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+}
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.calculator-card {
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: left;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.calculator-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+.calculator-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-button);
+    margin-bottom: 1rem;
+}
+.calculator-card p {
+    font-size: 16px;
+    color: var(--color-body-text);
+    line-height: 1.6;
+}
+.calculator-card .btn-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: var(--color-header-text);
+    text-decoration: none;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 2rem 15px;
+    margin-top: 5rem;
+    background-color: #f8f9fa;
+}
+.site-footer p {
+    margin: 0;
+    color: #6c757d;
+}
+/* === Riwayat Perhitungan === */
+.history-box {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.history-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.history-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 15px;
+}
