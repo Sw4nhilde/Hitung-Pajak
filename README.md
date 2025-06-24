@@ -97,20 +97,6 @@ Lalu akses di browser: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## 🖼️ Tampilan Antarmuka (opsional)
-
-Tambahkan screenshot hasil kalkulasi, tombol ekspor PDF, dan tabel riwayat, misalnya:
-
-```markdown
-### Hasil Kalkulasi
-![Hasil Pajak](screenshots/hasil-pajak.png)
-
-### Tabel Riwayat
-![Riwayat](screenshots/riwayat.png)
-```
-
----
-
 ## 📄 Struktur Folder Penting
 
 ```
